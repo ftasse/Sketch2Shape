@@ -1,4 +1,4 @@
-## Why?
+# Why?
 
 <!-- You can use the [editor on GitHub](https://github.com/ftasse/Sketch2Shape/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
 
@@ -10,14 +10,14 @@ Any concept I have starts with a sketch. Hand-drawing is one of the easiest ways
 
 <!--   To day sketches from  Quick draw   -->  
 
-## What?
+# What?
 The Sketch2Shape looks into how 3D models can be generated from hand-drawn sketches.  As a research scientist working at the intersection of Graphics, Vision & Machine Learning, I use the latest techniques in these fields.  The main objective is an AI that outputs a 3D volumetric mesh, given as input an image of  a hand-drawn sketch.  For this to happend we need:
 
-Part 1 -  A training dataset consisting for pairs of sketches and meshes.
-Part 2 -  A generative neural network model that once trained, will produce the right mesh given a sketch
+* Part 1 -  A training dataset consisting for pairs of sketches and meshes.
+* Part 2 -  A generative neural network model that once trained, will produce the right mesh given a sketch
 
 
-## Who?
+# Who?
 
 Just me, Flora Tasse. I hold a PhD in Computer Graphics/Vision from the University of Cambridge when I worked on an AI agent, Shape2Vec that retrieves the right 3D model from a database given queries such sketches, photos, depth maps or other 3D models.  Check out this SIGGRAPH Asia '16 paper if you want to learn out we use semantic information to achieve that.
 
@@ -27,8 +27,12 @@ As for where I come from, Cameroon is my motherland and where my dream for mergi
 
 ##  Part 1-  A Sketch-to-Shape dataset
 
+Coming soon
 
 
+##  Part 2-  A Sketch-to-Shape dataset
+
+Coming soon
 
 
 <!--### Markdown
