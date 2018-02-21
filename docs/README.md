@@ -8,7 +8,7 @@ As an aspiring artist, I have many times tried to find or create 3D content for 
 
 Any concept I have starts with a sketch. Hand-drawing is one of the easiest ways of communicating ideas. So what if I could turn my hand-drawn doodles to a 3D model? After all we humans can infer shapes from sketches. Now, as a research scientist, this is a problem I can investigate.
 
-![alt Some sketches from the Quick draw dataset](https://github.com/googlecreativelab/quickdraw-dataset/blob/master/preview.jpg  "Some sketches from the Quick draw dataset")
+![alt Some sketches from the Quick draw dataset](https://github.com/ftasse/Sketch2Shape/raw/master/docs/quickdrawpreview.jpg  "Some sketches from the Quick draw dataset")
 
 ![alt Some 3D models from the Shapenet dataset](https://github.com/ftasse/Sketch2Shape/raw/master/docs/shapenetcore.png "Some 3D models from the Shapenet dataset")
 
