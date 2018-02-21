@@ -89,7 +89,6 @@ Your Pages site will use the layout and styles from the Jekyll theme you have se
 
 Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.-->
 
-{% if page.comments %}
 <div id="disqus_thread"></div>
 <script>
     /**
@@ -112,4 +111,3 @@ Having trouble with Pages? Check out our [documentation](https://help.github.com
     })();
 </script>
 <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
-{% endif %}
