@@ -50,7 +50,7 @@ Line rendering is a well-understood method in 3D Graphics. Given a 3D mesh and a
 
 1- A simple silhouette rendering `Silhouette Window` that uses a specific geometry shader to render silhouette edges from a 3D geometry, based on the light direction and the vertex normals. Below is an example of sketches generated using this technique:
 
-![alt a 3D mesh](https://github.com/ftasse/Sketch2Shape/raw/master/docs/images/silhouette_edges/M000019.png  "a 3D Mesh") [alt Line rendering from position 1](https://github.com/ftasse/Sketch2Shape/raw/master/docs/images/silhouette_edges/M000019_1.png  "Line rendering from position 1") [alt Line rendering from position 2](https://github.com/ftasse/Sketch2Shape/raw/master/docs/images/silhouette_edges/M000019_4.png  "Line rendering from position 2")
+![alt a 3D mesh](https://github.com/ftasse/Sketch2Shape/raw/master/docs/images/silhouette_edges/M000019.png  "a 3D Mesh") ![alt Line rendering from position 1](https://github.com/ftasse/Sketch2Shape/raw/master/docs/images/silhouette_edges/M000019_1.png  "Line rendering from position 1") ![alt Line rendering from position 2](https://github.com/ftasse/Sketch2Shape/raw/master/docs/images/silhouette_edges/M000019_4.png  "Line rendering from position 2")
 
 2- A more complex method, `Suggestive Silhouette Window` is based on [Suggestive Contours](http://todo) from Princeton. Beyond the usual silhouette edges, they detect and draw apparent ridges they compute from the geometry. This produces those suggestive contours a human artist typically have in their sketches.
 
