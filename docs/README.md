@@ -8,9 +8,9 @@ As an aspiring artist, I have many times tried to find or create 3D content for 
 
 Any concept I have starts with a sketch. Hand-drawing is one of the easiest ways of communicating ideas. So what if I could turn my hand-drawn doodles to a 3D model? After all we humans can infer shapes from sketches. Now, as a research scientist, this is a problem I can investigate.
 
-![alt Some sketches from the Quick draw dataset](quickdrawpreview.jpg  "Some sketches from the Quick draw dataset")
+![alt Some sketches from the Quick draw dataset](/quickdrawpreview.jpg  "Some sketches from the Quick draw dataset")
 
-![alt Some 3D models from the Shapenet dataset](shapenetcore.png "Some 3D models from the Shapenet dataset")
+![alt Some 3D models from the Shapenet dataset](/shapenetcore.png "Some 3D models from the Shapenet dataset")
 
 # What?
 
@@ -50,7 +50,7 @@ Line rendering is a well-understood method in 3D Graphics. Given a 3D mesh and a
 
 1- A simple silhouette rendering `Silhouette Window` that uses a specific geometry shader to render silhouette edges from a 3D geometry, based on the light direction and the vertex normals. Below is an example of sketches generated using this technique:
 
-![alt A 3D mesh](images/silhouette_edges/M000019.png  "a 3D Mesh") ![alt Line rendering from position 1](images/silhouette_edges/M000019_1.png  "Line rendering from position 1") ![alt Line rendering from position 2](images/silhouette_edges/M000019_4.png  "Line rendering from position 2")
+![alt A 3D mesh](/images/silhouette_edges/M000019.png  "a 3D Mesh") ![alt Line rendering from position 1](/images/silhouette_edges/M000019_1.png  "Line rendering from position 1") ![alt Line rendering from position 2](/images/silhouette_edges/M000019_4.png  "Line rendering from position 2")
 
 2- A more complex method, `Suggestive Contours` is based on [Suggestive Contours](http://gfx.cs.princeton.edu/proj/sugcon/) from Princeton. Beyond the usual silhouette edges, they detect and draw apparent ridges they compute from the geometry. This produces those suggestive contours a human artist typically have in their sketches.
 
@@ -60,12 +60,12 @@ Both techniques will be valid to genrate sketches from any 3D model. However, ne
 
 Rather than the above complicated rendering techniques, we simply render the 3D textured meshes into multiple images from different views, and then generate edges for each image using the very popular [Canny Edge Detector](https://docs.opencv.org/3.3.1/da/d22/tutorial_py_canny.html).  This is what it looks like:
 
-![alt A rendering of a boat from position 1 ](images/silhouette_edges/M000102_010.jpg  "A rendering of a boat from position 1") ![alt Extracted edges](images/silhouette_edges/M000102_010_edges.jpg  "Extracted edges")  ![alt A rendering of a boat from position 2 ](images/silhouette_edges/M000102_001.jpg  "A rendering of a boat from position 2") ![alt Extracted edges](images/silhouette_edges/M000102_001_edges.jpg "Extracted edges")
+![alt A rendering of a boat from position 1 ](/images/silhouette_edges/M000102_010.jpg  "A rendering of a boat from position 1") ![alt Extracted edges](/images/silhouette_edges/M000102_010_edges.jpg  "Extracted edges")  ![alt A rendering of a boat from position 2 ](/images/silhouette_edges/M000102_001.jpg  "A rendering of a boat from position 2") ![alt Extracted edges](/images/silhouette_edges/M000102_001_edges.jpg "Extracted edges")
 
 In summary, from the 3D meshes dataset we obtain voxelized models (a 3D array of boolean values)   and  12 computer-generated sketches for each mesh.
 
 
-![alt A textured airplane model ](images/silhouette_edges/M000003_001.jpg "A textured airplane model ") ![alt Voxels](images/silhouette_edges/M000003_voxels.jpg "Voxels") ![alt Extracted edges 1](images/silhouette_edges/M000003_001_edges.jpg  "Extracted edges 1") 
+![alt A textured airplane model ](/images/silhouette_edges/M000003_001.jpg "A textured airplane model ") ![alt Voxels](/images/silhouette_edges/M000003_voxels.jpg "Voxels") ![alt Extracted edges 1](/images/silhouette_edges/M000003_001_edges.jpg  "Extracted edges 1") 
 
 ## Computer-generated to Hand-drawn 
 
@@ -76,7 +76,7 @@ sketch by passing it through the vgg16 neural net, and retaining the output of t
 
 With the above CNN-based descriptors, we can now match a hand-drawing to the most similar computer-generated sketch. Similarity between CNN_descriptors is the Cosine Distance.  Here is how results looks like:
 
-![alt A textured airplane model ](images/silhouette_edges/M000003_001.jpg "A textured airplane model ")  -> ![alt Voxels](images/silhouette_edges/M000003_voxels.jpg "Voxels") ![alt Extracted edges 1](images/silhouette_edges/M000003_001_edges.jpg  "Extracted edges 1")   ![alt Similar hand-drawn sketch 1](images/11.png "Similar hand-drawn sketch 1") 
+![alt A textured airplane model ](/images/silhouette_edges/M000003_001.jpg "A textured airplane model ")  -> ![alt Voxels](/images/silhouette_edges/M000003_voxels.jpg "Voxels") ![alt Extracted edges 1](/images/silhouette_edges/M000003_001_edges.jpg  "Extracted edges 1")   ![alt Similar hand-drawn sketch 1](/images/11.png "Similar hand-drawn sketch 1") 
 
 ## Where can I get the Sketch2Shape dataset?
 
