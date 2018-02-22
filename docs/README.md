@@ -60,12 +60,12 @@ Both techniques will be valid to genrate sketches from any 3D model. However, ne
 
 Rather than the above complicated rendering techniques, we simply render the 3D textured meshes into multiple images from different views, and then generate edges for each image using the very popular [Canny Edge Detector](https://docs.opencv.org/3.3.1/da/d22/tutorial_py_canny.html).  This is what it looks like:
 
-![alt A rendering of a boat from position 1 ](https://github.com/ftasse/Sketch2Shape/raw/master/docs/images/silhouette_edges/M000102_010.png  "A rendering of a boat from position 1") ![alt Extracted edges](https://github.com/ftasse/Sketch2Shape/raw/master/docs/images/silhouette_edges/M000102_010_edges.png  "Extracted edges")  ![alt A rendering of a boat from position 2 ](https://github.com/ftasse/Sketch2Shape/raw/master/docs/images/silhouette_edges/M000102_001.png  "A rendering of a boat from position 2") ![alt Extracted edges](https://github.com/ftasse/Sketch2Shape/raw/master/docs/images/silhouette_edges/M000102_001_edges.png  "Extracted edges")
+![alt A rendering of a boat from position 1 ](https://github.com/ftasse/Sketch2Shape/raw/master/docs/images/silhouette_edges/M000102_010.jpg  "A rendering of a boat from position 1") ![alt Extracted edges](https://github.com/ftasse/Sketch2Shape/raw/master/docs/images/silhouette_edges/M000102_010_edges.jpg  "Extracted edges")  ![alt A rendering of a boat from position 2 ](https://github.com/ftasse/Sketch2Shape/raw/master/docs/images/silhouette_edges/M000102_001.jpg  "A rendering of a boat from position 2") ![alt Extracted edges](https://github.com/ftasse/Sketch2Shape/raw/master/docs/images/silhouette_edges/M000102_001_edges.jpg "Extracted edges")
 
 In summary, from the 3D meshes dataset we obtain voxelized models (a 3D array of boolean values)   and  12 computer-generated sketches for each mesh.
 
 
-![alt A textured airplane model ](https://github.com/ftasse/Sketch2Shape/raw/master/docs/images/silhouette_edges/M000003_001.png  "A textured airplane model ") ![alt Voxels](https://github.com/ftasse/Sketch2Shape/raw/master/docs/images/silhouette_edges/M000003_voxels.png  "Voxels") ![alt Extracted edges 1](https://github.com/ftasse/Sketch2Shape/raw/master/docs/images/silhouette_edges/M000003_001_edges.png  "Extracted edges 1") 
+![alt A textured airplane model ](https://github.com/ftasse/Sketch2Shape/raw/master/docs/images/silhouette_edges/M000003_001.jpg "A textured airplane model ") ![alt Voxels](https://github.com/ftasse/Sketch2Shape/raw/master/docs/images/silhouette_edges/M000003_voxels.jpg "Voxels") ![alt Extracted edges 1](https://github.com/ftasse/Sketch2Shape/raw/master/docs/images/silhouette_edges/M000003_001_edges.jpg  "Extracted edges 1") 
 
 ## Computer-generated to Hand-drawn 
 
