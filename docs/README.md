@@ -65,7 +65,7 @@ Rather than the above complicated rendering techniques, we simply render the 3D 
 In summary, from the 3D meshes dataset we obtain voxelized models (a 3D array of boolean values)   and  12 computer-generated sketches for each mesh.
 
 
-![alt A textured airplane model ](https://github.com/ftasse/Sketch2Shape/raw/master/docs/images/silhouette_edges/M000003_001.jpg "A textured airplane model ")  -> ![alt Voxels](https://github.com/ftasse/Sketch2Shape/raw/master/docs/images/silhouette_edges/M000003_voxels.jpg "Voxels") ![alt Extracted edges 1](https://github.com/ftasse/Sketch2Shape/raw/master/docs/images/silhouette_edges/M000003_001_edges.jpg  "Extracted edges 1") 
+![alt A textured airplane model ](https://github.com/ftasse/Sketch2Shape/raw/master/docs/images/silhouette_edges/M000003_001.jpg "A textured airplane model ") ![alt Voxels](https://github.com/ftasse/Sketch2Shape/raw/master/docs/images/silhouette_edges/M000003_voxels.jpg "Voxels") ![alt Extracted edges 1](https://github.com/ftasse/Sketch2Shape/raw/master/docs/images/silhouette_edges/M000003_001_edges.jpg  "Extracted edges 1") 
 
 ## Computer-generated to Hand-drawn 
 
@@ -76,7 +76,7 @@ sketch by passing it through the vgg16 neural net, and retaining the output of t
 
 With the above CNN-based descriptors, we can now match a hand-drawing to the most similar computer-generated sketch. Similarity between CNN_descriptors is the Cosine Distance.  Here is how results looks like:
 
-![alt A textured airplane model ](https://github.com/ftasse/Sketch2Shape/raw/master/docs/images/silhouette_edges/M000003_001.jpg "A textured airplane model ")  -> ![alt Voxels](https://github.com/ftasse/Sketch2Shape/raw/master/docs/images/silhouette_edges/M000003_voxels.jpg "Voxels") ![alt Extracted edges 1](https://github.com/ftasse/Sketch2Shape/raw/master/docs/images/silhouette_edges/M000003_001_edges.jpg  "Extracted edges 1")   ![alt Similar hand-drawn sketch 1](https://github.com/ftasse/Sketch2Shape/raw/master/docs/images/11.png "Similar hand-drawn sketch 1") 
+![alt Voxels](https://github.com/ftasse/Sketch2Shape/raw/master/docs/images/silhouette_edges/M000003_voxels.jpg "Voxels") ![alt Extracted edges 1](https://github.com/ftasse/Sketch2Shape/raw/master/docs/images/silhouette_edges/M000003_001_edges.jpg  "Extracted edges 1")   ![alt Similar hand-drawn sketch 1](https://github.com/ftasse/Sketch2Shape/raw/master/docs/images/11.png "Similar hand-drawn sketch 1") 
 
 ## Where can I get the Sketch2Shape dataset?
 
