@@ -42,7 +42,17 @@ We will use these two existing datasets:
 
 ## Computer-generated sketches
 
-Coming soon
+Here, we are generating sketches, accross multiple view directions, from the 3D models dataset.  There are two approaches one can take to solve this:
+
+###  3D Line rendering techniques
+
+Line rendering is a well-understood method in 3D Graphics. Given a 3D mesh and a camera pose, we want to render an image that captures the silhouettes, ridges and contours of the mesh.  My open-source project [shape2d-tools](https://bitbucket.org/ftasse/shape2d_tools/src) does just that with two diffent method:
+
+1- A simple silhouette rendering `Silhouette Window` that uses a specific geometry shader to render silhouette edges from a 3D geometry, based on the light direction and the vertex normals. Below is an example of sketches generated using this technique:
+
+![alt a 3D mesh](https://github.com/ftasse/Sketch2Shape/raw/master/docs/images/silhouette_edges/M000019.png  "a 3D Mesh") [alt Line rendering from position 1](https://github.com/ftasse/Sketch2Shape/raw/master/docs/images/silhouette_edges/M000019_1.png  "Line rendering from position 1") [alt Line rendering from position 2](https://github.com/ftasse/Sketch2Shape/raw/master/docs/images/silhouette_edges/M000019_4.png  "Line rendering from position 2")
+
+2- A more complex method, `Suggestive Silhouette Window` is based on [Suggestive Contours](http://todo) from Princeton. Beyond the usual silhouette edges, they detect and draw apparent ridges they compute from the geometry. This produces those suggestive contours a human artist typically have in their sketches.
 
 ## Computer-generated to Hand-drawn 
 
