@@ -52,7 +52,7 @@ Line rendering is a well-understood method in 3D Graphics. Given a 3D mesh and a
 
 ![alt A 3D mesh](https://github.com/ftasse/Sketch2Shape/raw/master/docs/images/silhouette_edges/M000019.png  "a 3D Mesh") ![alt Line rendering from position 1](https://github.com/ftasse/Sketch2Shape/raw/master/docs/images/silhouette_edges/M000019_1.png  "Line rendering from position 1") ![alt Line rendering from position 2](https://github.com/ftasse/Sketch2Shape/raw/master/docs/images/silhouette_edges/M000019_4.png  "Line rendering from position 2")
 
-2- A more complex method, `Suggestive Silhouette Window` is based on [Suggestive Contours](http://gfx.cs.princeton.edu/proj/sugcon/) from Princeton. Beyond the usual silhouette edges, they detect and draw apparent ridges they compute from the geometry. This produces those suggestive contours a human artist typically have in their sketches.
+2- A more complex method, `Suggestive Contours` is based on [Suggestive Contours](http://gfx.cs.princeton.edu/proj/sugcon/) from Princeton. Beyond the usual silhouette edges, they detect and draw apparent ridges they compute from the geometry. This produces those suggestive contours a human artist typically have in their sketches.
 
 Both techniques will be valid to genrate sketches from any 3D model. However, neither take into account texture information. The Shapenet Core models are textured, and these textures can infer more cues about the 3D shape.
 
