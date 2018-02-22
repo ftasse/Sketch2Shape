@@ -22,11 +22,13 @@ The Sketch2Shape looks into how 3D models can be generated from hand-drawn sketc
 
 # Who?
 
-Just me, Flora Tasse. I hold a PhD in Computer Graphics/Vision from the University of Cambridge where I worked on an AI agent, Shape2Vec that retrieves the right 3D model from a database given queries such sketches, photos, depth maps or other 3D models.  Check out this [SIGGRAPH Asia '16 paper](http://www.cl.cam.ac.uk/research/rainbow/projects/shape2vec/)if you want to learn out we use semantic information to achieve that.
+Just me, Flora Tasse. I hold a PhD in Computer Graphics/Vision from the University of Cambridge where I worked on an AI agent, Shape2Vec that retrieves the right 3D model from a database given queries such sketches, photos, depth maps or other 3D models.  Check out this [SIGGRAPH Asia '16 paper] (http://www.cl.cam.ac.uk/research/rainbow/projects/shape2vec/)if you want to learn out we use semantic information to achieve that.
 
 Now, I lead the technological endeavors of [Selerio](http://selerio.io) where we reconstruct 3D contextual scenes from videos for more immersive and magical AR experiences.
 
 As for where I come from, Cameroon is my motherland and where my dream for merging the real and the virtual started.
+
+Big Thanks to the [AI grant](https://aigrant.org/) who provided funding  for this project!
 
 #  Part 1-  A Sketch-to-Shape dataset
 
@@ -52,7 +54,7 @@ Line rendering is a well-understood method in 3D Graphics. Given a 3D mesh and a
 
 ![alt A 3D mesh](/Sketch2Shape/images/silhouette_edges/M000019.png  "a 3D Mesh") ![alt Line rendering from position 1](/Sketch2Shape/images/silhouette_edges/M000019_1.png  "Line rendering from position 1") ![alt Line rendering from position 2](/Sketch2Shape/images/silhouette_edges/M000019_4.png  "Line rendering from position 2")
 
-2- A more complex method, `Suggestive Contours` is based on [Suggestive Contours](http://gfx.cs.princeton.edu/proj/sugcon/) from Princeton. Beyond the usual silhouette edges, they detect and draw apparent ridges they compute from the geometry. This produces those suggestive contours a human artist typically have in their sketches.
+2- A more complex method, `Suggestive Contours Window` is based on [Suggestive Contours](http://gfx.cs.princeton.edu/proj/sugcon/) from Princeton. Beyond the usual silhouette edges, they detect and draw apparent ridges they compute from the geometry. This produces those suggestive contours a human artist typically have in their sketches.
 
 Both techniques will be valid to genrate sketches from any 3D model. However, neither take into account texture information. The Shapenet Core models are textured, and these textures can infer more cues about the 3D shape.
 
@@ -76,7 +78,7 @@ sketch by passing it through the vgg16 neural net, and retaining the output of t
 
 With the above CNN-based descriptors, we can now match a hand-drawing to the most similar computer-generated sketch. Similarity between CNN_descriptors is the Cosine Distance.  Here is how results looks like:
 
-![alt A textured airplane model ](/Sketch2Shape/images/silhouette_edges/M000003_001.jpg "A textured airplane model ")  -> ![alt Voxels](/Sketch2Shape/images/silhouette_edges/M000003_voxels.jpg "Voxels") ![alt Extracted edges 1](/Sketch2Shape/images/silhouette_edges/M000003_001_edges.jpg  "Extracted edges 1")   ![alt Similar hand-drawn sketch 1](/Sketch2Shape/images/11.png "Similar hand-drawn sketch 1") 
+![alt A textured airplane model ](/Sketch2Shape/images/silhouette_edges/M000003_001.jpg "A textured airplane model ") ![alt Voxels](/Sketch2Shape/images/silhouette_edges/M000003_voxels.jpg "Voxels") ![alt Extracted edges 1](/Sketch2Shape/images/silhouette_edges/M000003_001_edges.jpg  "Extracted edges 1")   ![alt Similar hand-drawn sketch 1](/Sketch2Shape/images/11.png "Similar hand-drawn sketch 1") 
 
 ## Where can I get the Sketch2Shape dataset?
 
