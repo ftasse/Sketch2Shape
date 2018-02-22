@@ -50,9 +50,22 @@ Line rendering is a well-understood method in 3D Graphics. Given a 3D mesh and a
 
 1- A simple silhouette rendering `Silhouette Window` that uses a specific geometry shader to render silhouette edges from a 3D geometry, based on the light direction and the vertex normals. Below is an example of sketches generated using this technique:
 
-![alt a 3D mesh](https://github.com/ftasse/Sketch2Shape/raw/master/docs/images/silhouette_edges/M000019.png  "a 3D Mesh") ![alt Line rendering from position 1](https://github.com/ftasse/Sketch2Shape/raw/master/docs/images/silhouette_edges/M000019_1.png  "Line rendering from position 1") ![alt Line rendering from position 2](https://github.com/ftasse/Sketch2Shape/raw/master/docs/images/silhouette_edges/M000019_4.png  "Line rendering from position 2")
+![alt A 3D mesh](https://github.com/ftasse/Sketch2Shape/raw/master/docs/images/silhouette_edges/M000019.png  "a 3D Mesh") ![alt Line rendering from position 1](https://github.com/ftasse/Sketch2Shape/raw/master/docs/images/silhouette_edges/M000019_1.png  "Line rendering from position 1") ![alt Line rendering from position 2](https://github.com/ftasse/Sketch2Shape/raw/master/docs/images/silhouette_edges/M000019_4.png  "Line rendering from position 2")
 
-2- A more complex method, `Suggestive Silhouette Window` is based on [Suggestive Contours](http://todo) from Princeton. Beyond the usual silhouette edges, they detect and draw apparent ridges they compute from the geometry. This produces those suggestive contours a human artist typically have in their sketches.
+2- A more complex method, `Suggestive Silhouette Window` is based on [Suggestive Contours](http://gfx.cs.princeton.edu/proj/sugcon/) from Princeton. Beyond the usual silhouette edges, they detect and draw apparent ridges they compute from the geometry. This produces those suggestive contours a human artist typically have in their sketches.
+
+Both techniques will be valid to genrate sketches from any 3D model. However, neither take into account texture information. The Shapenet Core models are textured, and these textures can infer more cues about the 3D shape.
+
+###  2D Edge Detection
+
+Rather than the above complicated rendering techniques, we simply render the 3D textured meshes into multiple images from different views, and then generate edges for each image using the very popular [Canny Edge Detector](https://docs.opencv.org/3.3.1/da/d22/tutorial_py_canny.html).  This is what it looks like:
+
+![alt A rendering of a boat from position 1 ](https://github.com/ftasse/Sketch2Shape/raw/master/docs/images/silhouette_edges/M000102_010.png  "A rendering of a boat from position 1") ![alt Extracted edges](https://github.com/ftasse/Sketch2Shape/raw/master/docs/images/silhouette_edges/M000102_010_edges.png  "Extracted edges")  ![alt A rendering of a boat from position 2 ](https://github.com/ftasse/Sketch2Shape/raw/master/docs/images/silhouette_edges/M000102_001.png  "A rendering of a boat from position 2") ![alt Extracted edges](https://github.com/ftasse/Sketch2Shape/raw/master/docs/images/silhouette_edges/M000102_001_edges.png  "Extracted edges")
+
+In summary, from the 3D meshes dataset we obtain voxelized models (a 3D array of boolean values)   and  12 computer-generated sketches for each mesh.
+
+
+![alt A textured airplane model ](https://github.com/ftasse/Sketch2Shape/raw/master/docs/images/silhouette_edges/M000003_001.png  "A textured airplane model ") ![alt Voxels](https://github.com/ftasse/Sketch2Shape/raw/master/docs/images/silhouette_edges/M000003_voxels.png  "Voxels") ![alt Extracted edges 1](https://github.com/ftasse/Sketch2Shape/raw/master/docs/images/silhouette_edges/M000003_001_edges.png  "Extracted edges 1") 
 
 ## Computer-generated to Hand-drawn 
 
