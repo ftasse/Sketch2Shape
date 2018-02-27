@@ -77,7 +77,7 @@ sketch by passing it through the Google InceptionV3 neural net, and retaining th
 
 With the above CNN-based descriptors, we can now match a hand-drawing to the most similar computer-generated sketch. Similarity between CNN descriptors is estimated with the Cosine Distance.  Here is how results looks like:
 
-![alt A textured airplane model ](/Sketch2Shape/images/silhouette_edges/M000003_001.jpg "A textured airplane model ") ![alt Voxels](/Sketch2Shape/images/silhouette_edges/M000003_voxels.jpg "Voxels") ![alt Extracted edges 1](/Sketch2Shape/images/silhouette_edges/M000003_001_edges.jpg  "Extracted edges 1")   ![alt Similar hand-drawn sketch 1](/Sketch2Shape/images/11.png "Similar hand-drawn sketch 1") 
+![alt Voxels](/Sketch2Shape/images/silhouette_edges/M000003_voxels.jpg "Voxels") ![alt Extracted edges 1](/Sketch2Shape/images/silhouette_edges/M000003_001_edges.jpg  "Extracted edges 1")   ![alt Similar hand-drawn sketch 1](/Sketch2Shape/images/11.png "Similar hand-drawn sketch 1") 
 
 ## Where can I get the Sketch2Shape dataset?
 
