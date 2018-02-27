@@ -6,7 +6,7 @@ Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://j
 
 As an aspiring artist, I have many times tried to find or create 3D content for the stories I wanted to tell. This starts with having the right 3D models. However you quickly find out that you have only two options: spend hours searching for the perfect model on sites like [Sketchfab](http://sketchfab.com) or  spend weeks/months learning a 3D Graphics tool like [Blender](http://blender.org).  Neither is particular appealing.
 
-Any concept I have starts with a sketch. Hand-drawing is one of the easiest ways of communicating ideas. So what if I could turn my hand-drawn doodles to a 3D model? After all we humans can infer shapes from sketches. Now, as a research scientist, this is a problem I can investigate.
+Any concept I have starts with a sketch. Hand-drawing is one of the easiest ways of communicating ideas. So what if I could turn my hand-drawn doodles into to 3D models? After all we humans can infer shapes from sketches. Now, as a research scientist, this is a problem I can investigate.
 
 ![alt Some sketches from the Quick draw dataset](/Sketch2Shape/quickdrawpreview.jpg  "Some sketches from the Quick draw dataset")
 
@@ -14,25 +14,25 @@ Any concept I have starts with a sketch. Hand-drawing is one of the easiest ways
 
 # What?
 
-The Sketch2Shape looks into how 3D models can be generated from hand-drawn sketches.  As a research scientist working at the intersection of Graphics, Vision & Machine Learning, I use the latest techniques in these fields.  The main objective is an AI that outputs a 3D volumetric mesh, given as input an image of  a hand-drawn sketch.  For this to happend we need:
+Sketch2Shape looks into how 3D models can be generated from hand-drawn sketches.  As a research scientist working at the intersection of Graphics, Vision & Machine Learning, I use the latest techniques in these fields.  The main objective is an AI that outputs a 3D volumetric mesh, given as input an image of a hand-drawn sketch. For this to happend we need:
 
-* Part 1 -  A training dataset consisting for pairs of sketches and meshes.
-* Part 2 -  A generative neural network model that will produce the right mesh given a sketch
+* Part 1 -  A training dataset consisting of pairs of sketches and meshes.
+* Part 2 -  A generative neural network model that will produce the right mesh given a sketch.
 
 
 # Who?
 
-Just me, Flora Tasse. I hold a PhD in Computer Graphics/Vision from the University of Cambridge where I worked on an AI agent, Shape2Vec that retrieves the right 3D model from a database given queries such sketches, photos, depth maps or other 3D models.  Check out this [SIGGRAPH Asia '16 paper] (http://www.cl.cam.ac.uk/research/rainbow/projects/shape2vec/)if you want to learn out we use semantic information to achieve that.
+Just me, Flora Tasse. I hold a PhD in Computer Graphics/Vision from the University of Cambridge where I worked on an AI agent, Shape2Vec, that retrieves the relevant 3D model from a database given queries such sketches, photos, depth maps or other 3D models. Check out this [SIGGRAPH Asia '16 paper] (http://www.cl.cam.ac.uk/research/rainbow/projects/shape2vec/)if you want to learn how we use semantic information to achieve that.
 
 Now, I lead the technological endeavors of [Selerio](http://selerio.io) where we reconstruct 3D contextual scenes from videos for more immersive and magical AR experiences.
 
 As for where I come from, Cameroon is my motherland and where my dream for merging the real and the virtual started.
 
-Big Thanks to the [AI grant](https://aigrant.org/) who provided funding  for this project!
+Big Thanks to the [AI grant](https://aigrant.org/) who provided funding for this project!
 
 #  Part 1-  A Sketch-to-Shape dataset
 
-Because generating dataset is time-consuming and resources-draining, I decided to build on top of existing datasets. There is no dataset of pairs of sketches  and meshes. But we can use edge detection and Graphics rendering techniques to create computer-generated sketches from 3D meshes.  
+Because generating datasets is time-consuming and resource-draining, I decided to build on top of existing datasets. There is no dataset of pairs of sketches and meshes. But we can use edge detection and Graphics rendering techniques to create computer-generated sketches from meshes.  
 
 However computer-generated sketches are quite different from hand-drawn sketches. The latter are more complex, less structured and can vastly vary from one user to another based on style and skills.  So we need to link our computer-generated sketches to hand-drawn sketches. Luckily image similarity is a well-understood problem in Vision and we will use deep features generated from a Convolutional neural network to match a dataset of hand-drawn sketches to our own computer-generated sketches from a mesh dataset.
 
@@ -48,15 +48,15 @@ Here, we are generating sketches, accross multiple view directions, from the 3D 
 
 ###  3D Line rendering techniques
 
-Line rendering is a well-understood method in 3D Graphics. Given a 3D mesh and a camera pose, we want to render an image that captures the silhouettes, ridges and contours of the mesh.  My open-source project [shape2d-tools](https://bitbucket.org/ftasse/shape2d_tools/src) does just that with two diffent method:
+Line rendering is a well-understood process in 3D Graphics. Given a 3D mesh and a camera pose, we want to render an image that captures the silhouettes, ridges and contours of the mesh from the camera viewpoint.  My open-source project [shape2d-tools](https://bitbucket.org/ftasse/shape2d_tools/src) does just that with two different methods:
 
 1- A simple silhouette rendering `Silhouette Window` that uses a specific geometry shader to render silhouette edges from a 3D geometry, based on the light direction and the vertex normals. Below is an example of sketches generated using this technique:
 
 ![alt A 3D mesh](/Sketch2Shape/images/silhouette_edges/M000019.png  "a 3D Mesh") ![alt Line rendering from position 1](/Sketch2Shape/images/silhouette_edges/M000019_1.png  "Line rendering from position 1") ![alt Line rendering from position 2](/Sketch2Shape/images/silhouette_edges/M000019_4.png  "Line rendering from position 2")
 
-2- A more complex method, `Suggestive Contours Window` is based on [Suggestive Contours](http://gfx.cs.princeton.edu/proj/sugcon/) from Princeton. Beyond the usual silhouette edges, they detect and draw apparent ridges they compute from the geometry. This produces those suggestive contours a human artist typically have in their sketches.
+2- A more complex method, `Suggestive Contours Window` is based on [Suggestive Contours](http://gfx.cs.princeton.edu/proj/sugcon/) from Princeton. Beyond the usual silhouette edges, they detect and draw apparent ridges computed from the geometry. This produces those suggestive contours a human artist will typically have in their sketch.
 
-Both techniques will be valid to genrate sketches from any 3D model. However, neither take into account texture information. The Shapenet Core models are textured, and these textures can infer more cues about the 3D shape.
+Both techniques will be valid to generate sketches from any 3D model. However, neither take into account texture information. The Shapenet Core models are textured, and these textures can provide more cues about 3D shapes.
 
 ###  2D Edge Detection
 
@@ -64,19 +64,18 @@ Rather than the above complicated rendering techniques, we simply render the 3D 
 
 ![alt A rendering of a boat from position 1 ](/Sketch2Shape/images/silhouette_edges/M000102_010.jpg  "A rendering of a boat from position 1") ![alt Extracted edges](/Sketch2Shape/images/silhouette_edges/M000102_010_edges.jpg  "Extracted edges")  ![alt A rendering of a boat from position 2 ](/Sketch2Shape/images/silhouette_edges/M000102_001.jpg  "A rendering of a boat from position 2") ![alt Extracted edges](/Sketch2Shape/images/silhouette_edges/M000102_001_edges.jpg "Extracted edges")
 
-In summary, from the 3D meshes dataset we obtain voxelized models (a 3D array of boolean values)   and  12 computer-generated sketches for each mesh.
-
+In summary, from the 3D meshes dataset we obtain voxelized models (a 3D array of boolean values) and 12 computer-generated sketches for each mesh.
 
 ![alt A textured airplane model ](/Sketch2Shape/images/silhouette_edges/M000003_001.jpg "A textured airplane model ") ![alt Voxels](/Sketch2Shape/images/silhouette_edges/M000003_voxels.jpg "Voxels") ![alt Extracted edges 1](/Sketch2Shape/images/silhouette_edges/M000003_001_edges.jpg  "Extracted edges 1") 
 
 ## Computer-generated to Hand-drawn 
 
-In this section, we match each sketch in the hand drawings dataset to a computer-generated sketch, so that we can link hand drawings to volumetric meshes. This one-to-one correspondence will be need to train our AI with pairs of positive results.
+In this section, we match each sketch in the hand drawings dataset to a computer-generated sketch, so that we can link hand drawings to volumetric meshes. This one-to-one correspondence will be needed to train our AI with pairs of positive/negative results.
 
-To deal with similarity, we take advantage of convolutional neural network. We compute a descriptor for each computer-generated 
-sketch by passing it through the vgg16 neural net, and retaining the output of the last fully connected layer fc6. This produces a 2096D vector for each computer-generated image. 
+To deal with similarity, we take advantage of convolutional neural networks. We compute a descriptor for each computer-generated 
+sketch by passing it through the Google InceptionV3 neural net, and retaining the output of the last fully connected layer `avg_pool`. This produces a 2048D vector for each computer-generated image. 
 
-With the above CNN-based descriptors, we can now match a hand-drawing to the most similar computer-generated sketch. Similarity between CNN_descriptors is the Cosine Distance.  Here is how results looks like:
+With the above CNN-based descriptors, we can now match a hand-drawing to the most similar computer-generated sketch. Similarity between CNN descriptors is estimated with the Cosine Distance.  Here is how results looks like:
 
 ![alt A textured airplane model ](/Sketch2Shape/images/silhouette_edges/M000003_001.jpg "A textured airplane model ") ![alt Voxels](/Sketch2Shape/images/silhouette_edges/M000003_voxels.jpg "Voxels") ![alt Extracted edges 1](/Sketch2Shape/images/silhouette_edges/M000003_001_edges.jpg  "Extracted edges 1")   ![alt Similar hand-drawn sketch 1](/Sketch2Shape/images/11.png "Similar hand-drawn sketch 1") 
 
